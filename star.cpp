@@ -35,11 +35,7 @@ int dfs(int node) {
 
 int main() {
     ios_base::sync_with_stdio(false);cin.tie(NULL);
-   
-   #ifndef ONLINE_JUDGE
-   freopen("input.txt", "r", stdin);
-   freopen("output.txt", "w", stdout);
-   #endif
+
 
     cin >> N >> M;
     adj.resize(N + 1);
@@ -49,10 +45,10 @@ int main() {
         int a, b;
         cin >> a >> b;
         adj[a].push_back(b);
-        adj[b].push_back(a);  // Ya que es un grafo no dirigido
+        adj[b].push_back(a); 
     }
 
-    vector<int> clusters;  // Para almacenar el tamaño de cada cúmulo Atod
+    vector<int> clusters;  
 
     for (int i = 1; i <= N; i++) {
         if (!visited[i]) {
@@ -62,7 +58,7 @@ int main() {
 
     sort(clusters.begin(), clusters.end());
 
-    cout << clusters.size() << endl;  // Total de cúmulos Atod
+    cout << clusters.size() << endl; 
     for (int size : clusters) {
         cout << size << endl;
     }
